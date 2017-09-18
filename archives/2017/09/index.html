@@ -12,7 +12,7 @@
         <meta name="keywords" content="hexo,javascript,">
     
     
-        <link rel="icon" href="https://autrol.git hub.io/assets/images/favicon.ico">
+        <link rel="icon" href="https://autrol.github.io/assets/images/favicon.ico">
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
@@ -20,7 +20,7 @@
     <meta name="keywords" content="hexo,javascript">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Autrol&#39;s Blog">
-<meta property="og:url" content="https://autrol.git hub.io/archives/2017/09/index.html">
+<meta property="og:url" content="https://autrol.github.io/archives/2017/09/index.html">
 <meta property="og:site_name" content="Autrol&#39;s Blog">
 <meta property="og:locale" content="zh-cn">
 <meta name="twitter:card" content="summary">
@@ -30,7 +30,7 @@
         
     
     
-        <meta property="og:image" content="https://autrol.git hub.io/assets/images/avatar.png"/>
+        <meta property="og:image" content="https://autrol.github.io/assets/images/avatar.png"/>
     
     
     
@@ -40,6 +40,7 @@
     <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
     <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css">
     <link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+    <link rel="stylesheet" href="/assets/css/github.min.css">
     <!--STYLES END-->
     
     
@@ -221,27 +222,110 @@
     <section class="postShorten-group main-content-wrap">
     
     
-    <article class="postShorten postShorten--thumbnailimg-center" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/2017/09/17/demo/">
-                            Hexo Demo
+                        <a class="link-unstyled" href="/2017/09/19/jquery-proxy/">
+                            jQuery.proxy()函数
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-09-17T01:12:54+08:00">
+    <time itemprop="datePublished" datetime="2017-09-19T00:35:59+08:00">
 	
-		    2017-09-17
+		    2017-09-19
     	
     </time>
     
         <span>发布在 </span>
         
-    <a class="category-link" href="/categories/Javascript/">Javascript</a>
+    <a class="category-link" href="/categories/jQuery/">jQuery</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>jQuery.proxy()，接受一个函数，然后返回一个新函数，并且这个新函数始终保持了特定的上下文(context)语境。</p>
+<pre><code class="javascript">// context 代表上下文
+// name是上下文的某个属性
+function $initHighlight(block, cls) {
+  try {
+    if (cls.search(/\bno\-highlight\b/) != -1)
+      return process(block, true, 0x0F) +
+             ` class=&quot;${cls}&quot;`;
+  } catch (e) {
+    /* handle exception */
+  }
+  for (var i = 0 / 2; i &lt; classes.length; i++) {
+    if (checkCondition(classes[i]) === undefined)
+      console.log(&#39;undefined&#39;);
+  }
+}
+
+export  $initHighlight;
+</code></pre>
+<pre><code>&#39;use strict&#39;;
+
+module.exports = function (router) {    
+    router.get(&#39;&#x2F;&#39;, function* (next) {
+        yield this.render(&#39;demo_page&#x2F;index&#39;, {
+            data: &#39;模版变量&#39;
+        });
+    });
+
+    router.get(&#39;&#x2F;inner_demo_page&#39;, function* (next) {
+        yield this.render(&#39;demo_page&#x2F;inner_demo_page&#x2F;index&#39;);
+    });
+};</code></pre>
+<p>上面两条语句的功能是一样一样的</p>
+<p>举例：<br><pre><code>$.post(url, {}, $.proxy(this.function, this));&#x2F;&#x2F;function指代函数名
+$.post(url, {}, $.proxy(this, &quot;function&quot;));</code></pre></p>
+<p>上面两条语句的功能是一样一样的</p>
+
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/09/19/jquery-proxy/#post-footer" class="postShorten-excerpt_link link">
+                                评论和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2017/09/19/hexo-api/">
+                            Hexo API 示例
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-09-19T00:15:15+08:00">
+	
+		    2017-09-19
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/Tool/">Tool</a>
 
 
     
@@ -253,7 +337,7 @@
                     <!-- toc -->
 <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a><br>
                     
-                        <a href="/2017/09/17/demo/" class="postShorten-excerpt_link link">
+                        <a href="/2017/09/19/hexo-api/" class="postShorten-excerpt_link link">
                             阅读全文
                         </a>
                         
@@ -261,108 +345,6 @@
                 </div>
             
         </div>
-        
-            <a href="/2017/09/17/demo/">
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="http://d1u9biwaxjngwg.cloudfront.net/welcome-to-tranquilpeak/city-750.jpg"/>
-                </div>
-            </a>
-            
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-left" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/09/16/index/">
-                            第一页
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-09-16T23:01:14+08:00">
-	
-		    2017-09-16
-    	
-    </time>
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get ou can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br>
-                    
-                        <a href="/2017/09/16/index/" class="postShorten-excerpt_link link">
-                            阅读全文
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-            <a href="/2017/09/16/index/">
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="http://b1.hucdn.com/upload/item/1709/03/51082042983619_800x800.jpg!320.webp"/>
-                </div>
-            </a>
-            
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-left" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/09/16/hello-world/">
-                            Hello World
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-09-16T11:41:07+08:00">
-	
-		    2017-09-16
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/Javascript/">Javascript</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <!-- toc -->
-<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br>
-                    
-                        <a href="/2017/09/16/hello-world/" class="postShorten-excerpt_link link">
-                            阅读全文
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-            <a href="/2017/09/16/hello-world/">
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="http://b1.hucdn.com/upload/item/1709/03/51082042983619_800x800.jpg!320.webp"/>
-                </div>
-            </a>
-            
         
     </article>
     
@@ -446,76 +428,38 @@
                 
                 <div class="media">
                     
-                    <div class="media-left">
-                        <a class="link-unstyled" href="https://autrol.git hub.io/2017/09/16/hello-world/">
-                            <img class="media-image" src="http://b1.hucdn.com/upload/item/1709/03/51082042983619_800x800.jpg!320.webp" width="90" height="90"/>
-                        </a>
-                    </div>
-                    
                     <div class="media-body">
-                        <a class="link-unstyled" href="https://autrol.git hub.io/2017/09/16/hello-world/">
-                            <h3 class="media-heading">Hello World</h3>
+                        <a class="link-unstyled" href="https://autrol.github.io/2017/09/19/hexo-api/">
+                            <h3 class="media-heading">Hexo API 示例</h3>
                         </a>
                         <span class="media-meta">
                             <span class="media-date text-small">
                                 
-                                    2017年9月16日
-                                
-                            </span>
-                        </span>
-                        <div class="media-content hide-xs font-merryweather"><!-- toc -->
-<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br></div>
-                    </div>
-                    <div style="clear:both;"></div>
-                    <hr>
-                </div>
-                
-                <div class="media">
-                    
-                    <div class="media-left">
-                        <a class="link-unstyled" href="https://autrol.git hub.io/2017/09/16/index/">
-                            <img class="media-image" src="http://b1.hucdn.com/upload/item/1709/03/51082042983619_800x800.jpg!320.webp" width="90" height="90"/>
-                        </a>
-                    </div>
-                    
-                    <div class="media-body">
-                        <a class="link-unstyled" href="https://autrol.git hub.io/2017/09/16/index/">
-                            <h3 class="media-heading">第一页</h3>
-                        </a>
-                        <span class="media-meta">
-                            <span class="media-date text-small">
-                                
-                                    2017年9月16日
-                                
-                            </span>
-                        </span>
-                        <div class="media-content hide-xs font-merryweather"><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get ou can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br></div>
-                    </div>
-                    <div style="clear:both;"></div>
-                    <hr>
-                </div>
-                
-                <div class="media">
-                    
-                    <div class="media-left">
-                        <a class="link-unstyled" href="https://autrol.git hub.io/2017/09/17/demo/">
-                            <img class="media-image" src="http://d1u9biwaxjngwg.cloudfront.net/welcome-to-tranquilpeak/city-750.jpg" width="90" height="90"/>
-                        </a>
-                    </div>
-                    
-                    <div class="media-body">
-                        <a class="link-unstyled" href="https://autrol.git hub.io/2017/09/17/demo/">
-                            <h3 class="media-heading">Hexo Demo</h3>
-                        </a>
-                        <span class="media-meta">
-                            <span class="media-date text-small">
-                                
-                                    2017年9月17日
+                                    2017年9月19日
                                 
                             </span>
                         </span>
                         <div class="media-content hide-xs font-merryweather"><!-- toc -->
 <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a><br></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://autrol.github.io/2017/09/19/jquery-proxy/">
+                            <h3 class="media-heading">jQuery.proxy()函数</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年9月19日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
@@ -528,7 +472,7 @@
                 data-message-zero="没有找到文章"
                 data-message-one="找到 1 篇文章"
                 data-message-other="找到 {n} 篇文章">
-                找到 3 篇文章
+                找到 2 篇文章
             </p>
         </div>
     </div>
@@ -551,5 +495,10 @@
         var algoliaIndex = algoliaClient.initIndex('fe_blog');
     </script>
 
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    // highlight
+    hljs.initHighlightingOnLoad();
+</script>
     </body>
 </html>

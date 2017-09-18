@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Autrol&#39;s Blog">
-    <title>all-categories - Autrol&#39;s Blog</title>
+    <title>jQuery.proxy()函数 - Autrol&#39;s Blog</title>
     <meta name="author" content="Autrol">
     
         <meta name="keywords" content="hexo,javascript,">
@@ -17,15 +17,18 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="keywords" content="hexo,javascript">
+    <meta name="description" content="jQuery.proxy()，接受一个函数，然后返回一个新函数，并且这个新函数始终保持了特定的上下文(context)语境。 // context 代表上下文 // name是上下文的某个属性 function $initHighlight(block, cls) {   try {     if (cls.search(/\bno\-highlight\b/) != -1)       retu">
+<meta name="keywords" content="hexo,javascript">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="all-categories">
-<meta property="og:url" content="https://autrol.github.io/all-categories/index.html">
+<meta property="og:title" content="jQuery.proxy()函数">
+<meta property="og:url" content="https://autrol.github.io/2017/09/19/jquery-proxy/index.html">
 <meta property="og:site_name" content="Autrol&#39;s Blog">
+<meta property="og:description" content="jQuery.proxy()，接受一个函数，然后返回一个新函数，并且这个新函数始终保持了特定的上下文(context)语境。 // context 代表上下文 // name是上下文的某个属性 function $initHighlight(block, cls) {   try {     if (cls.search(/\bno\-highlight\b/) != -1)       retu">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-09-16T06:15:26.000Z">
+<meta property="og:updated_time" content="2017-09-18T17:39:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="all-categories">
+<meta name="twitter:title" content="jQuery.proxy()函数">
+<meta name="twitter:description" content="jQuery.proxy()，接受一个函数，然后返回一个新函数，并且这个新函数始终保持了特定的上下文(context)语境。 // context 代表上下文 // name是上下文的某个属性 function $initHighlight(block, cls) {   try {     if (cls.search(/\bno\-highlight\b/) != -1)       retu">
     
     
         
@@ -58,7 +61,7 @@
         
     
 
-<header id="header" data-behavior="1">
+<header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <div class="header-title">
         <a class="header-title-link" href="/ ">Autrol&#39;s Blog</a>
@@ -82,7 +85,7 @@
         
     
 
-<nav id="sidebar" data-behavior="1">
+<nav id="sidebar" data-behavior="4">
     <div class="sidebar-container">
         
             <div class="sidebar-profile">
@@ -215,44 +218,162 @@
 </nav>
 
             
-            <div id="main" data-behavior="1"
+            <div id="main" data-behavior="4"
                  class="
                         hasCoverMetaIn
                         ">
                 
-<div id="categories-archives" class="main-content-wrap">
-    <form id="filter-form" action="##">
-        <input name="category" type="text" class="form-control input--xlarge"
-               placeholder="搜索分类" autofocus="autofocus">
-    </form>
-    <h5 class="archive-result text-color-base text-xlarge"
-        data-message-zero="没有找到分类"
-        data-message-one="找到 1 个分类"
-        data-message-other="找到 {n} 个分类"></h5>
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-center">
+    
+        <h1 class="post-title" itemprop="headline">
+            jQuery.proxy()函数
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time itemprop="datePublished" datetime="2017-09-19T00:35:59+08:00">
+	
+		    2017-09-19
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/jQuery/">jQuery</a>
 
-        <section class="boxes">
-        
-            
-                <div><a href="#posts-list-Tool" class="category-anchor" data-category="tool" data-parent-categories="">Tool</a></div>
-            
-        
-            
-                <div><a href="#posts-list-jQuery" class="category-anchor" data-category="jquery" data-parent-categories="">jQuery</a></div>
-            
-        
-    </section>
-    <section class="boxes">
-        
-            
-                    <div id="posts-list-Tool" class="archive box" data-category="tool" data-parent-categories=""><h4 class="archive-title text-xlarge"><a class="link-unstyled" href="/categories/Tool/">Tool (1)</a></h4><ul class="archive-posts"><li class="archive-post"><a class="archive-post-title" href="/2017/09/19/hexo-api/">Hexo API 示例</a><span class="archive-post-date"> - 2017-09-19</span></li></ul></div>
-            
-        
-            
-                    <div id="posts-list-jQuery" class="archive box" data-category="jquery" data-parent-categories=""><h4 class="archive-title text-xlarge"><a class="link-unstyled" href="/categories/jQuery/">jQuery (1)</a></h4><ul class="archive-posts"><li class="archive-post"><a class="archive-post-title" href="/2017/09/19/jquery-proxy/">jQuery.proxy()函数</a><span class="archive-post-date"> - 2017-09-19</span></li></ul></div>
-            
-        
-    </section>
+
+    
 </div>
+
+    
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>jQuery.proxy()，接受一个函数，然后返回一个新函数，并且这个新函数始终保持了特定的上下文(context)语境。</p>
+<pre><code class="javascript">// context 代表上下文
+// name是上下文的某个属性
+function $initHighlight(block, cls) {
+  try {
+    if (cls.search(/\bno\-highlight\b/) != -1)
+      return process(block, true, 0x0F) +
+             ` class=&quot;${cls}&quot;`;
+  } catch (e) {
+    /* handle exception */
+  }
+  for (var i = 0 / 2; i &lt; classes.length; i++) {
+    if (checkCondition(classes[i]) === undefined)
+      console.log(&#39;undefined&#39;);
+  }
+}
+
+export  $initHighlight;
+</code></pre>
+<pre><code>&#39;use strict&#39;;
+
+module.exports = function (router) {    
+    router.get(&#39;&#x2F;&#39;, function* (next) {
+        yield this.render(&#39;demo_page&#x2F;index&#39;, {
+            data: &#39;模版变量&#39;
+        });
+    });
+
+    router.get(&#39;&#x2F;inner_demo_page&#39;, function* (next) {
+        yield this.render(&#39;demo_page&#x2F;inner_demo_page&#x2F;index&#39;);
+    });
+};</code></pre>
+<p>上面两条语句的功能是一样一样的</p>
+<p>举例：<br><pre><code>$.post(url, {}, $.proxy(this.function, this));&#x2F;&#x2F;function指代函数名
+$.post(url, {}, $.proxy(this, &quot;function&quot;));</code></pre></p>
+<p>上面两条语句的功能是一样一样的</p>
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/09/19/hexo-api/" data-tooltip="Hexo API 示例">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=https://autrol.github.io/2017/09/19/jquery-proxy/">
+                    <i class="fa fa-weibo"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=https://autrol.github.io/2017/09/19/jquery-proxy/&amp;title=jQuery.proxy()函数">
+                    <i class="fa fa-qq"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://autrol.github.io/2017/09/19/jquery-proxy/">
+                    <i class="fa fa-star"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="http://widget.renren.com/dialog/share?resourceUrl=https://autrol.github.io/2017/09/19/jquery-proxy/">
+                    <i class="fa fa-renren"></i>
+                </a>
+            </li>
+        
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+    </div>
+</article>
+
+
 
                 <footer id="footer" class="main-content-wrap">
     <span class="copyrights">
@@ -261,6 +382,120 @@
 </footer>
 
             </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/09/19/hexo-api/" data-tooltip="Hexo API 示例">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=https://autrol.github.io/2017/09/19/jquery-proxy/">
+                    <i class="fa fa-weibo"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=https://autrol.github.io/2017/09/19/jquery-proxy/&amp;title=jQuery.proxy()函数">
+                    <i class="fa fa-qq"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://autrol.github.io/2017/09/19/jquery-proxy/">
+                    <i class="fa fa-star"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="http://widget.renren.com/dialog/share?resourceUrl=https://autrol.github.io/2017/09/19/jquery-proxy/">
+                    <i class="fa fa-renren"></i>
+                </a>
+            </li>
+        
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-close"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=https://autrol.github.io/2017/09/19/jquery-proxy/">
+                    <i class="fa fa-weibo"></i><span>分享到 Weibo</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=https://autrol.github.io/2017/09/19/jquery-proxy/&amp;title=jQuery.proxy()函数">
+                    <i class="fa fa-qq"></i><span>分享到 QQ</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://autrol.github.io/2017/09/19/jquery-proxy/">
+                    <i class="fa fa-star"></i><span>分享到 Qzone</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="http://widget.renren.com/dialog/share?resourceUrl=https://autrol.github.io/2017/09/19/jquery-proxy/">
+                    <i class="fa fa-renren"></i><span>分享到 Renren</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
             
         </div>
         
