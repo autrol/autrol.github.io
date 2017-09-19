@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://autrol.github.io/"/>
-  <updated>2017-09-18T17:39:32.000Z</updated>
+  <updated>2017-09-19T01:51:23.000Z</updated>
   <id>https://autrol.github.io/</id>
   
   <author>
@@ -21,19 +21,14 @@
     <link href="https://autrol.github.io/2017/09/19/jquery-proxy/"/>
     <id>https://autrol.github.io/2017/09/19/jquery-proxy/</id>
     <published>2017-09-18T16:35:59.000Z</published>
-    <updated>2017-09-18T17:39:32.000Z</updated>
+    <updated>2017-09-19T01:51:23.000Z</updated>
     
-    <content type="html"><![CDATA[<p>jQuery.proxy()，接受一个函数，然后返回一个新函数，并且这个新函数始终保持了特定的上下文(context)语境。</p><pre><code class="javascript">// context 代表上下文// name是上下文的某个属性function $initHighlight(block, cls) {  try {    if (cls.search(/\bno\-highlight\b/) != -1)      return process(block, true, 0x0F) +             ` class=&quot;${cls}&quot;`;  } catch (e) {    /* handle exception */  }  for (var i = 0 / 2; i &lt; classes.length; i++) {    if (checkCondition(classes[i]) === undefined)      console.log(&#39;undefined&#39;);  }}export  $initHighlight;</code></pre><pre><code>&#39;use strict&#39;;module.exports = function (router) {        router.get(&#39;&#x2F;&#39;, function* (next) {        yield this.render(&#39;demo_page&#x2F;index&#39;, {            data: &#39;模版变量&#39;        });    });    router.get(&#39;&#x2F;inner_demo_page&#39;, function* (next) {        yield this.render(&#39;demo_page&#x2F;inner_demo_page&#x2F;index&#39;);    });};</code></pre><p>上面两条语句的功能是一样一样的</p><p>举例：<br><pre><code>$.post(url, {}, $.proxy(this.function, this));&#x2F;&#x2F;function指代函数名$.post(url, {}, $.proxy(this, &quot;function&quot;));</code></pre></p><p>上面两条语句的功能是一样一样的</p>]]></content>
+    <content type="html"><![CDATA[<p>jQuery.proxy()接受一个函数，然后返回一个新函数，并且这个新函数始终保持了特定的上下文(context)语境。</p><p>下面两条语句的功能是一样一样的：<br><a id="more"></a></p><pre><code class="javascript">// context 代表上下文// name是上下文的某个属性jQuery.proxy (context.name, context);jQuery.proxy (context, &quot;name&quot;);</code></pre><p>下面两条语句的功能是一样一样的：</p><pre><code class="javascript">$.post(url, {}, $.proxy(this.function, this)); // function指代函数名$.post(url, {}, $.proxy(this, &quot;function&quot;));</code></pre>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;jQuery.proxy()，接受一个函数，然后返回一个新函数，并且这个新函数始终保持了特定的上下文(context)语境。&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;// context 代表上下文
-// name是上下文的某个属性
-functi
-      
+      &lt;p&gt;jQuery.proxy()接受一个函数，然后返回一个新函数，并且这个新函数始终保持了特定的上下文(context)语境。&lt;/p&gt;
+&lt;p&gt;下面两条语句的功能是一样一样的：&lt;br&gt;
     
     </summary>
     

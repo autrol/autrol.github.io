@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[jQuery.proxy()函数]]></title>
     <url>%2F2017%2F09%2F19%2Fjquery-proxy%2F</url>
-    <content type="text"><![CDATA[jQuery.proxy()，接受一个函数，然后返回一个新函数，并且这个新函数始终保持了特定的上下文(context)语境。 // context 代表上下文 // name是上下文的某个属性 function $initHighlight(block, cls) { try { if (cls.search(/\bno\-highlight\b/) != -1) return process(block, true, 0x0F) + ` class=&quot;${cls}&quot;`; } catch (e) { /* handle exception */ } for (var i = 0 / 2; i &lt; classes.length; i++) { if (checkCondition(classes[i]) === undefined) console.log(&#39;undefined&#39;); } } export $initHighlight; &#39;use strict&#39;; module.exports = function (router) { router.get(&#39;&#x2F;&#39;, function* (next) { yield this.render(&#39;demo_page&#x2F;index&#39;, { data: &#39;模版变量&#39; }); }); router.get(&#39;&#x2F;inner_demo_page&#39;, function* (next) { yield this.render(&#39;demo_page&#x2F;inner_demo_page&#x2F;index&#39;); }); }; 上面两条语句的功能是一样一样的 举例：$.post(url, {}, $.proxy(this.function, this));&#x2F;&#x2F;function指代函数名 $.post(url, {}, $.proxy(this, &quot;function&quot;)); 上面两条语句的功能是一样一样的]]></content>
+    <content type="text"><![CDATA[jQuery.proxy()接受一个函数，然后返回一个新函数，并且这个新函数始终保持了特定的上下文(context)语境。 下面两条语句的功能是一样一样的： // context 代表上下文 // name是上下文的某个属性 jQuery.proxy (context.name, context); jQuery.proxy (context, &quot;name&quot;); 下面两条语句的功能是一样一样的： $.post(url, {}, $.proxy(this.function, this)); // function指代函数名 $.post(url, {}, $.proxy(this, &quot;function&quot;));]]></content>
       <categories>
         <category>jQuery</category>
       </categories>
